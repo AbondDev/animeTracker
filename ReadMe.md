@@ -1,3 +1,3 @@
 # Anime Tracker
 ## Description
-This is a project I found online on how to create a MERN app.
+This is an anime tracker project I found online to help practice combining mongo, express, node, and react
