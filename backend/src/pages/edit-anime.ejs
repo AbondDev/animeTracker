@@ -4,26 +4,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Add Anime</title>
+  <title>
+    <% if(editing) {%>Edit Anime<% } else {%> Add Anime<%}%>
+  </title>
 </head>
 
 <body>
-  <h1>Add Anime</h1>
-  <form class="" action="/add-anime" method="post">
+  <h1><% if(editing) {%>Edit Anime<% } else {%> Add Anime<%}%></h1>
+  <form class="" action="/<% if(editing) {%>edit-anime<% } else {%>add-anime<%}%>" method="post">
     <div>
       <label for="name">Name</label>
-      <input type="text" name="name" id="name" required>
+      <input type="text" name="name" id="name" value="<%if(editing){%><%=anime.name%><%}%>" required>
     </div>
     <div>
       <label for="image">Image</label>
-      <input type="text" name="image" id="image" required>
+      <input type="text" name="image" id="image" value="<%if(editing){%><%=anime.image%><%}%>" required>
     </div>
     <div>
       <label for="description">Description</label>
-      <input type="text" name="description" id="description" required>
+      <input type="text" name="description" id="description" value="<%if(editing){%><%=anime.description%><%}%>" required>
     </div>
+    <%if(editing){%>
+    <div class="">
+      <input type="hidden" name="animeId" value="<%=anime._id%>">
+    </div>
+    <%}%>
     <div>
-      <button type="submit">Add Anime</button>
+      <button type="submit"><% if(editing) {%>Edit Anime<% } else {%> Add Anime<%}%></button>
     </div>
   </form>
 </body>

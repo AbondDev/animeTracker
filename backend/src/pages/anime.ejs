@@ -9,17 +9,23 @@
 
 <body>
   <h1>Anime</h1>
-  <h2><%= anime.name %></h2>
-  <img src="<%= anime.image %>" alt="<%= anime.name %>">
-  <p><%= anime.description %></p>
-  <div class="">
-    <form action="/delete" method="post">
-      <div class="">
-        <!-- <input type="hidden" name="animeId" value="<%= anime._id %>">
-        <button>Delete</button> -->
-      </div>
-    </form>
-  </div>
+  <main>
+    <h2><%= anime.name %></h2>
+    <img src="<%=anime.image%>" alt="<%= anime.name %>">
+    <p><%= anime.description %></p>
+    <div class="">
+      <form action="/delete" method="post">
+        <div class="">
+          <input type="hidden" name="animeId" value="<%= anime._id %>">
+          <button>Delete</button>
+        </div>
+      </form>
+    </div>
+    <div>
+      <a href="/edit-anime/<%=anime._id%>?edit=true">Edit</a>
+    </div>
+  </main>
+
 </body>
 
 </html>
