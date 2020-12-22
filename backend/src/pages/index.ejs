@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+</head>
+
+<body>
+  <h1>Home Page</h1>
+  <% for(let show of shows){%>
+    <ul>
+      <li><h1><a href="/<%= show._id %>"><%= show.name %></a></h1></li>
+      <li><img src="/" alt="<%= show.name %>"></li>
+      <li><p><%= show.description %></p></li>
+    </ul>
+  <%}%>
+</body>
+
+</html>
